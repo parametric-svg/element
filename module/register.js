@@ -26,13 +26,18 @@ const {create} = Object;
   *     HTMLElement?  : Function,
   *   }) => void
   */
-export default ({document}) => {
+export default ({document, HTMLElement}) => {
   const doc = (
     document ||
     (typeof window !== 'undefined' && window.document)
   );
 
-  const prototype = assign(create(HTMLElement.prototype), {
+  const basePrototype = (
+    HTMLElement ||
+    (typeof window !== 'undefined' && window.HTMLElement)
+  ).prototype;
+
+  const prototype = assign(create(basePrototype), {
     createdCallback() {
       const syncSvg = this.querySelector('svg');
       if (syncSvg) this._init(syncSvg);
