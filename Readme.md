@@ -79,8 +79,6 @@ Usage
 
 Wrap an `<svg>` with a `<parametric-svg>` element – all parametric attributes within the `<svg>` will be [immediately]() resolved and updated.
 
-If you add an `<svg>` after the `<parametric-svg>` was created, you’ll need to call the `.initialize()` method on the parametric SVG manually.
-
 See the [example](#/example) to get a general idea what a parametric SVG is. You can read up on the syntax in the [spec][].
 
 [immediately]:  http://devdocs.io/dom/window/setimmediate
