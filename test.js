@@ -100,6 +100,59 @@ test('Works in a DOM structure built up programatically', (is) => {
   });
 });
 
-'Only affects the first child SVG';
+test('Only affects the first child SVG', (is) => {
+  is.plan(2);
 
-'Only affects a direct child SVG';
+  document.body.innerHTML = `
+    <parametric-svg>
+      <svg>
+      </svg>
+
+      <svg>
+        <rect parametric:x="50" />
+      </svg>
+
+      <div><svg>
+          <circle parametric:r="70" r="5" />
+      </svg></div>
+    </parametric-svg>
+  `;
+
+  const rect = document.body.querySelector('rect');
+
+  is.equal(
+    rect.getAttribute('x'),
+    null,
+    'leaves a second child untouched'
+  );
+
+  const circle = document.body.querySelector('circle');
+
+  is.equal(
+    circle.getAttribute('r'),
+    '5',
+    'leaves another nested child untouched'
+  );
+});
+
+test('Works with a nested SVG', (is) => {
+  is.plan(1);
+
+  document.body.innerHTML = `
+    <parametric-svg>
+      <div>
+        <svg>
+          <rect parametric:x="5 / 5" />
+        </svg>
+      </div>
+    </parametric-svg>
+  `;
+
+  const rect = document.body.querySelector('rect');
+
+  is.equal(
+    rect.getAttribute('x'),
+    String(5 / 5),
+    'nested one level deep'
+  );
+});
