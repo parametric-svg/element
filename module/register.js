@@ -1,6 +1,8 @@
 const parse = require('parametric-svg-parse');
 const patch = require('parametric-svg-patch');
 const setImmediate = require('set-immediate-shim');
+const assign = require('object-assign');
+const {create} = Object;
 
  /**
   * Register the `<parametric-svg>` element with custom settings
@@ -25,18 +27,22 @@ export default ({document}) => {
     (typeof window !== 'undefined' && window.document)
   );
 
-  doc.registerElement('parametric-svg', {prototype: {
+  // TODO: Test `HTMLElement`.
+  const prototype = assign(create(HTMLElement.prototype), {
     createdCallback() {
       const syncSvg = this.querySelector('svg');
       if (syncSvg) this._init(syncSvg);
       else setImmediate(() => {
         const asyncSvg = this.querySelector('svg');
         if (asyncSvg) this._init(asyncSvg);
+        // TODO: Else throw or something.
       });
     },
 
     _init(svg) {
       patch(svg, parse(svg), {});
     },
-  }});
+  });
+
+  doc.registerElement('parametric-svg', {prototype});
 };

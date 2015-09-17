@@ -3,6 +3,7 @@
   "version": "0.0.0-work-in-progress",
   "description": "Parametric 2D graphics. As a custom element (aka Web Component).",
   "dependencies": {
+    "object-assign": "^4.0.1",
     "parametric-svg-parse": "^1.0.0-alpha",
     "parametric-svg-patch": "^1.0.0-alpha",
     "set-immediate-shim": "^1.0.1"
