@@ -21,8 +21,7 @@ export default ({document}) => {
     (typeof window !== 'undefined' && window.document)
   );
 
-  doc.registerElement(
-    'parametric-svg',
-    {}
-  );
+  doc.registerElement('parametric-svg', {prototype: {
+    createdCallback: () => {},
+  }});
 };
