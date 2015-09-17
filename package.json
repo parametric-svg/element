@@ -23,7 +23,21 @@
     "/License.md"
   ],
   "license": "MIT",
-  "keywords": [],
+  "keywords": [
+    "svg",
+    "parametric-svg",
+    "graphics",
+    "vector",
+    "cad",
+    "custom-element",
+    "web-component",
+    "custom",
+    "element",
+    "2d",
+    "parametric",
+    "declarative",
+    "xml"
+  ],
   "author": "Tomek Wiszniewski <t.wiszniewski@gmail.com>",
   "repository": {
     "type": "git",
