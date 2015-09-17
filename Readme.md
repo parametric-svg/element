@@ -46,6 +46,16 @@ Or you can drop in a `<script>` from the fantastic http://wzrd.in CDN. In produc
 
 
 
+<a                                                          id="/api"></a>&nbsp;
+
+API
+---
+
+<!-- @doxie.inject start --><!-- @doxie.inject end -->
+
+
+
+
 <a                                                      id="/license"></a>&nbsp;
 
 License
