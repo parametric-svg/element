@@ -15,7 +15,29 @@
 
 **Parametric 2D graphics. As a custom HTML element.**
 
-**Heads up!** This package is in an early development stage. Not ready for prime time yet.
+
+
+
+<a                                                 id="/example"></a>&nbsp;
+
+```html
+<parametric-svg>
+  <svg><rect
+    parametric:x="2 * (5 + 3)"
+  /></svg>
+</parametric-svg>
+```
+
+<p align="center"><b>➔</b></p>
+
+```html
+<parametric-svg>
+  <svg><rect
+    parametric:x="2 * (5 + 3)"
+               x="16"
+  /></svg>
+</parametric-svg>
+```
 
 
 
@@ -35,13 +57,16 @@ $ npm install parametric-svg-element
 require('parametric-svg-element');
 ```
 
-Or you can drop in a `<script>` from the fantastic http://wzrd.in CDN. In production just remember to swap `latest` with a concrete version number – or download the file and serve it yourself:
+Otherwise you can drop our `<script>` from the fantastic *[wzrd.in][]* CDN anywhere in your HTML document:
 
 ```html
 <script src="https://wzrd.in/standalone/parametric-svg-element@latest"></script>
 ```
 
+If you’re going the `<script>` way, remember to swap `latest` with a concrete version number in production. You can also download the script from https://wzrd.in/standalone/parametric-svg-element@latest and serve it yourself.
+
 [webpack]:  http://webpack.github.io
+[wzrd.in]:  http://wzrd.in
 
 
 
