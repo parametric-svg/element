@@ -16,9 +16,14 @@ const {create} = Object;
   * - `document` – A custom implementation of `document` – for headless tests
   *   or something. Default: `window.document`
   *
+  * - `HTMLElement` – A custom HTMLElement constructor. If you’re passing
+  *   a `document`, you’ll probably want to pass this as well. Default:
+  *   `window.HTMLElement`.
+  *
   * @jsig
   *   register(options: {
-  *     document?  : Document
+  *     document?     : Document,
+  *     HTMLElement?  : Function,
   *   }) => void
   */
 export default ({document}) => {
