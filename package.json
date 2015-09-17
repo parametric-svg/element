@@ -10,8 +10,8 @@
     "develop": "nodangel --ignore node_modules --ignore coverage --exec 'npm run --silent test:lite'",
     "prepublish": "npm run --silent clean && npm run transpile",
     "readme": "dox --raw < module/register.js | doxie --render --inject",
-    "test": "eslint . && npm run test:transpile && node .es5/test.js | tap-spec",
-    "test:lite": "babel-node test.js | tap-spec",
+    "test": "eslint . && npm run test:lite",
+    "test:lite": "browserify --transform=babelify test.js | testron | tap-spec",
     "test:transpile": "rm -rf .es5 && babel test.js module/*.js --out-dir .es5",
     "transpile": "babel --loose es6.modules module --out-dir .",
     "view-coverage": "echo 'Generating coverage reports...'; npm run coverage >/dev/null && echo '...done.' && opn ./coverage/lcov-report/index.html >/dev/null"
@@ -47,11 +47,14 @@
   "devDependencies": {
     "babel": "5.8.23",
     "babel-eslint": "4.1.2",
+    "babelify": "6.3.0",
+    "browserify": "11.1.0",
     "coveralls": "2.11.4",
     "dox": "0.8.0",
     "doxie": "0.2.3",
     "doxie.inject": "0.1.1",
     "doxie.render": "0.3.2",
+    "electron-prebuilt": "0.33.0",
     "eslint": "1.4.3",
     "eslint-config-airbnb": "0.0.8",
     "eslint-plugin-react": "3.4.1",
@@ -61,6 +64,7 @@
     "repeat-element": "1.1.2",
     "tap-spec": "2.2.2",
     "tape": "4.2.0",
-    "tape-catch": "1.0.4"
+    "tape-catch": "1.0.4",
+    "testron": "1.2.0"
   }
 }
