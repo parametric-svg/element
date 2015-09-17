@@ -51,22 +51,19 @@ test('Registers the <parametric-svg> element', (is) => {
 test('Works in a DOM structure created in one go', (is) => {
   is.plan(1);
 
-  const parser = new DOMParser;
-  const parametricSvg = parser.parseFromString(
-`<!DOCTYPE html>
-<parametric-svg>
-  <svg>
-    <rect parametric:x="50" />
-  </svg>
-</parametric-svg>
-`,
-    'text/html'
-  );
-  const rect = parametricSvg.documentElement.querySelector('rect');
+  document.body.innerHTML = `
+    <parametric-svg>
+      <svg>
+        <rect parametric:x="50" />
+      </svg>
+    </parametric-svg>
+  `;
+
+  const rect = document.body.querySelector('rect');
 
   is.equal(
     rect.getAttribute('x'),
-    '10',
+    '50',
     'synchronously'
   );
 });
