@@ -13,6 +13,8 @@ const {create} = Object;
   * function you get back takes a single argument `options` with the following
   * properties:
   *
+  * - `logger` – A custom logger. Default: `window.console`.
+  *
   * - `document` – A custom implementation of `document` – for headless tests
   *   or something. Default: `window.document`
   *
@@ -22,14 +24,20 @@ const {create} = Object;
   *
   * @jsig
   *   register(options: {
+  *     logger?       : {warn: Function},
   *     document?     : Document,
   *     HTMLElement?  : Function,
   *   }) => void
   */
-export default ({document, HTMLElement}) => {
+export default ({logger, document, HTMLElement}) => {
   const doc = (
     document ||
     (typeof window !== 'undefined' && window.document)
+  );
+
+  const log = (
+    logger ||
+    (typeof window !== 'undefined' && window.console)
   );
 
   const basePrototype = (
