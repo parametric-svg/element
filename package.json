@@ -27,7 +27,7 @@
   "author": "Tomek Wiszniewski <t.wiszniewski@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "git@github.com:tomekwi/parametric-svg-element"
+    "url": "git@github.com:parametric-svg/element"
   },
   "devDependencies": {
     "babel": "5.8.23",

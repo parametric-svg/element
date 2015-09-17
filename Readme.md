@@ -1,5 +1,5 @@
-[![Travis CI](https://img.shields.io/travis/parametric-svg/html/master.svg?style=flat-square)](https://travis-ci.org/parametric-svg/html)
- [![David DM](https://img.shields.io/david/parametric-svg/html.svg?style=flat-square)](http://david-dm.org/parametric-svg/html)
+[![Travis CI](https://img.shields.io/travis/parametric-svg/element/master.svg?style=flat-square)](https://travis-ci.org/parametric-svg/element)
+ [![David DM](https://img.shields.io/david/parametric-svg/element.svg?style=flat-square)](http://david-dm.org/parametric-svg/element)
 
 
 
