@@ -32,7 +32,6 @@ export default ({document}) => {
     (typeof window !== 'undefined' && window.document)
   );
 
-  // TODO: Test `HTMLElement`.
   const prototype = assign(create(HTMLElement.prototype), {
     createdCallback() {
       const syncSvg = this.querySelector('svg');
