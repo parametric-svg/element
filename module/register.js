@@ -1,7 +1,6 @@
-require('setimmediate');  // Modifies the global object.
-
 const parse = require('parametric-svg-parse');
 const patch = require('parametric-svg-patch');
+const setImmediate = require('set-immediate-shim');
 const assign = require('object-assign');
 const {create} = Object;
 
