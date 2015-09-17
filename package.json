@@ -2,7 +2,11 @@
   "name": "parametric-svg-element",
   "version": "0.0.0-work-in-progress",
   "description": "Parametric 2D graphics. As a custom element (aka Web Component).",
-  "dependencies": {},
+  "dependencies": {
+    "parametric-svg-parse": "^1.0.0-alpha",
+    "parametric-svg-patch": "^1.0.0-alpha",
+    "set-immediate-shim": "^1.0.1"
+  },
   "scripts": {
     "clean": "git reset && echo '/node_modules/' > .gitignore && git add .gitignore && git stash save --include-untracked --keep-index '`npm run clean` trash can' && git clean --force -d && git reset --hard && echo '\nclean: Uncommitted and ignored files have been moved to git’s stash. To restore them run `git stash pop --quiet; git checkout .gitignore`.'",
     "develop": "hihat test.js -- --plugin=tap-dev-tool",
