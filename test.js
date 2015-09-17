@@ -1,13 +1,18 @@
 import register from './module/register';
 
 const test = require('tape-catch');
+const repeat = require('repeat-element');
 
 test('Registers the <parametric-svg> element', (is) => {
-  is.plan(2);
+  is.plan(5);
 
   const registerElement = (
-    name, {extends: extendsArg = null}
+    name, {prototype, extends: extendsArg = null}
   ) => {
+    is.pass(
+      'taking a custom implementation of `document`'
+    );
+
     is.equal(
       name,
       'parametric-svg',
@@ -18,6 +23,22 @@ test('Registers the <parametric-svg> element', (is) => {
       extendsArg,
       null,
       'as a standard HTML element – no bells and whistles'
+    );
+
+    is.equal(
+      typeof prototype.createdCallback,
+      'function',
+      'attaching stuff to the createdCallback…'
+    );
+
+    is.deepEqual(
+      [
+        prototype.attachedCallback,
+        prototype.detachedCallback,
+        prototype.atributeChangedCallback,
+      ],
+      repeat(undefined, 3),
+      '…and to no other lifecycle callback'
     );
   };
 
