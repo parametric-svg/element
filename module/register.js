@@ -15,4 +15,14 @@
   *     document?  : Document
   *   }) => void
   */
-export default () => {};
+export default ({document}) => {
+  const doc = (
+    document ||
+    (typeof window !== 'undefined' && window.document)
+  );
+
+  doc.registerElement(
+    'parametric-svg',
+    {}
+  );
+};
