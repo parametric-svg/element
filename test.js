@@ -7,7 +7,9 @@ const test = require('tape-catch');
 const repeat = require('repeat-element');
 
 test('Registers the <parametric-svg> element', (is) => {
-  is.plan(5);
+  is.plan(6);
+
+  const HTMLElement = () => {};
 
   const registerElement = (
     name, {prototype, extends: extendsArg = null}
@@ -29,6 +31,12 @@ test('Registers the <parametric-svg> element', (is) => {
     );
 
     is.equal(
+      prototype.constructor,
+      HTMLElement,
+      'inheriting from the given `HTMLElement`'
+    );
+
+    is.equal(
       typeof prototype.createdCallback,
       'function',
       'attaching stuff to the createdCallback…'
@@ -45,7 +53,7 @@ test('Registers the <parametric-svg> element', (is) => {
     );
   };
 
-  register({document: {registerElement}});
+  register({document: {registerElement}, HTMLElement});
 });
 
 test('Works in a DOM structure created in one go', (is) => {

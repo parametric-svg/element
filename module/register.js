@@ -16,19 +16,28 @@ const {create} = Object;
   * - `document` – A custom implementation of `document` – for headless tests
   *   or something. Default: `window.document`
   *
+  * - `HTMLElement` – A custom HTMLElement constructor. If you’re passing
+  *   a `document`, you’ll probably want to pass this as well. Default:
+  *   `window.HTMLElement`.
+  *
   * @jsig
   *   register(options: {
-  *     document?  : Document
+  *     document?     : Document,
+  *     HTMLElement?  : Function,
   *   }) => void
   */
-export default ({document}) => {
+export default ({document, HTMLElement}) => {
   const doc = (
     document ||
     (typeof window !== 'undefined' && window.document)
   );
 
-  // TODO: Test `HTMLElement`.
-  const prototype = assign(create(HTMLElement.prototype), {
+  const basePrototype = (
+    HTMLElement ||
+    (typeof window !== 'undefined' && window.HTMLElement)
+  ).prototype;
+
+  const prototype = assign(create(basePrototype), {
     createdCallback() {
       const syncSvg = this.querySelector('svg');
       if (syncSvg) this._init(syncSvg);
