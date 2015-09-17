@@ -51,7 +51,27 @@ Or you can drop in a `<script>` from the fantastic http://wzrd.in CDN. In produc
 API
 ---
 
-<!-- @doxie.inject start --><!-- @doxie.inject end -->
+<!-- @doxie.inject start -->
+<!-- Don’t remove or change the comment above – that can break automatic updates. -->
+#####  Register the `<parametric-svg>` element with custom settings
+
+<div align="right"><sub>JSIG SIGNATURE <a href="http://jsig.biz/">(?)</a></sub></div>
+```js
+register(options: {
+  document?  : Document
+}) => void
+```
+
+In most cases you’ll just import the main module and be fine with the
+default settings (see [getting started](#/getting-started)). But if you want
+fine control, you can `require('parametric-svg-element/register')`. The
+function you get back takes a single argument `options` with the following
+properties:
+
+- `document` – A custom implementation of `document` – for headless tests
+  or something. Default: `window.document`
+<!-- Don’t remove or change the comment below – that can break automatic updates. More info at <http://npm.im/doxie.inject>. -->
+<!-- @doxie.inject end -->
 
 
 
