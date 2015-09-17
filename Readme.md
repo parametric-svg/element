@@ -111,6 +111,7 @@ API
 
 ```js
 register(options: {
+  logger?       : {warn: Function},
   document?     : Document,
   HTMLElement?  : Function,
 }) => void
@@ -121,6 +122,8 @@ default settings (see [getting started](#/getting-started)). But if you want
 fine control, you can `require('parametric-svg-element/register')`. The
 function you get back takes a single argument `options` with the following
 properties:
+
+- `logger` – A custom logger. Default: `window.console`.
 
 - `document` – A custom implementation of `document` – for headless tests
   or something. Default: `window.document`
