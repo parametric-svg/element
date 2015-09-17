@@ -164,3 +164,24 @@ test('Works with a nested SVG', (is) => {
     'nested one level deep'
   );
 });
+
+test('Warns when no <svg> is inside', (is) => {
+  is.plan(1);
+
+  const HTMLElement = {prototype: {
+    querySelector: (selector) => (selector === 'svg' ? null : {}),
+  }};
+
+  const document = {
+    registerElement: (_, {prototype}) => prototype.createdCallback(),
+  };
+
+  const logger = {warn(message) {
+    is.ok(
+      /couldn’t find/i.test(message),
+      'prints a helpful warning'
+    );
+  }};
+
+  register({document, HTMLElement, logger});
+});

@@ -52,7 +52,9 @@ export default ({logger, document, HTMLElement}) => {
       else setImmediate(() => {
         const asyncSvg = this.querySelector('svg');
         if (asyncSvg) this._init(asyncSvg);
-        // TODO: Else throw or something.
+        else log.warn(
+          '<parametric-svg>:  Couldn’t find an <svg> element in ', this
+        );
       });
     },
 
