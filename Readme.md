@@ -1,4 +1,4 @@
-<a                                                             id="/"></a>&nbsp;
+<a                                                                   id="/"></a>
 
 [![Travis CI
 ](https://img.shields.io/travis/parametric-svg/element/master.svg?style=flat-square)
