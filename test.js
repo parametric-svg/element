@@ -1,3 +1,6 @@
+import './module';
+  // This registers the <parametric-svg> thing on the actual `document`.
+
 import register from './module/register';
 
 const test = require('tape-catch');
@@ -44,9 +47,6 @@ test('Registers the <parametric-svg> element', (is) => {
 
   register({document: {registerElement}});
 });
-
-// Register the thing on the actual `document`. That’s what `index.js` does.
-register({});
 
 test('Works in a DOM structure created in one go', (is) => {
   is.plan(1);
