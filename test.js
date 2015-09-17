@@ -74,27 +74,32 @@ test('Works in a DOM structure created in one go', (is) => {
 test('Works in a DOM structure built up programatically', (is) => {
   is.plan(2);
 
-  const parametricSvg = document.createElement('parametric-svg');
-  const svg = document.createElement('svg');
-  const circle = document.createElement('circle');
-  svg.appendChild(circle);
-  parametricSvg.appendChild(svg);
+  setTimeout(() => {
+    // For reliable, consistent results this test must fire after the initial
+    // render.
 
-  circle.setAttribute('r', '5');
-  circle.setAttribute('parametric:r', '2 * (3 + 5)');
+    const parametricSvg = document.createElement('parametric-svg');
+    const svg = document.createElement('svg');
+    const circle = document.createElement('circle');
+    svg.appendChild(circle);
+    parametricSvg.appendChild(svg);
 
-  is.equal(
-    circle.getAttribute('r'),
-    '5',
-    'updates asynchronously'
-  );
+    circle.setAttribute('r', '5');
+    circle.setAttribute('parametric:r', '2 * (3 + 5)');
 
-  requestAnimationFrame(() => {
     is.equal(
       circle.getAttribute('r'),
-      String(2 * (3 + 5)),
-      'within a single animation frame'
+      '5',
+      'updates asynchronously'
     );
+
+    requestAnimationFrame(() => {
+      is.equal(
+        circle.getAttribute('r'),
+        String(2 * (3 + 5)),
+        'within a single animation frame'
+      );
+    });
   });
 });
 
