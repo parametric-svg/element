@@ -1,5 +1,16 @@
-[![Travis CI](https://img.shields.io/travis/parametric-svg/element/master.svg?style=flat-square)](https://travis-ci.org/parametric-svg/element)
- [![David DM](https://img.shields.io/david/parametric-svg/element.svg?style=flat-square)](http://david-dm.org/parametric-svg/element)
+<a                                                                   id="/"></a>
+[![Travis CI
+](https://img.shields.io/travis/parametric-svg/element/master.svg?style=flat-square)
+](https://travis-ci.org/parametric-svg/element)
+ [![David DM
+](https://img.shields.io/david/parametric-svg/element.svg?style=flat-square)
+](http://david-dm.org/parametric-svg/element)
+ [![Stability: experimental
+](https://img.shields.io/badge/stability-experimental-yellow.svg?style=flat-square)
+](https://nodejs.org/api/documentation.html#documentation_stability_index)
+ [![Code style: airbnb
+](https://img.shields.io/badge/code%20style-airbnb-777777.svg?style=flat-square)
+](https://github.com/airbnb/javascript)
 
 
 
