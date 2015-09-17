@@ -1,51 +1,45 @@
-[![Coveralls – test coverage
-](https://img.shields.io/coveralls/tomekwi/parametric-svg-element.svg?style=flat-square)
-](https://coveralls.io/r/tomekwi/parametric-svg-element)
- [![Travis – build status
-](https://img.shields.io/travis/tomekwi/parametric-svg-element/master.svg?style=flat-square)
-](https://travis-ci.org/tomekwi/parametric-svg-element)
- [![David – status of dependencies
-](https://img.shields.io/david/tomekwi/parametric-svg-element.svg?style=flat-square)
-](https://david-dm.org/tomekwi/parametric-svg-element)
- [![Stability: experimental
-](https://img.shields.io/badge/stability-experimental-yellow.svg?style=flat-square)
-](https://nodejs.org/api/documentation.html#documentation_stability_index)
- [![Code style: airbnb
-](https://img.shields.io/badge/code%20style-airbnb-777777.svg?style=flat-square)
-](https://github.com/airbnb/javascript)
+[![Travis CI](https://img.shields.io/travis/parametric-svg/html/master.svg?style=flat-square)](https://travis-ci.org/parametric-svg/html)
+ [![David DM](https://img.shields.io/david/parametric-svg/html.svg?style=flat-square)](http://david-dm.org/parametric-svg/html)
 
 
 
 
-parametric-svg-element
-======================
+<h1 align="center"                                                       id="/">
+  <img
+    alt="&gt;parametric-svg&lt;"
+    src="https://cdn.rawgit.com/parametric-svg/identity/v1.1.0/logo/html.svg"
+    width="680"
+    height="190"
+  />
+</h1>
 
-**Parametric 2D graphics. As a custom element (aka Web Component).**
+**Parametric 2D graphics. As a custom HTML element.**
 
-
-**Heads up!** This is totally a work in progress. [Thoughts and ideas][] are very welcome.
-
-[Thoughts and ideas]:  https://github.com/tomekwi/parametric-svg-element/issues
+**Heads up!** This package is in an early development stage. Not ready for prime time yet.
 
 
 
 
-<a                                                 id="/installation"></a>&nbsp;
+<a                                              id="/getting-started"></a>&nbsp;
 
-Installation
-------------
+Getting started
+---------------
+
+If you’re building your app with *[webpack][]* or something:
 
 ```sh
 $ npm install parametric-svg-element
 ```
 
+```js
+require('parametric-svg-element');
+```
 
+Or you can drop in a `<script>` from the fantastic http://wzrd.in CDN. In production just remember to swap `latest` with a concrete version number – or download the file and serve it yourself:
 
-
-<a                                                        id="/usage"></a>&nbsp;
-
-Usage
------
+```html
+<script src="https://wzrd.in/standalone/parametric-svg-element@latest"></script>
+```
 
 *Work in progress…*
 
