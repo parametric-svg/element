@@ -1,5 +1,6 @@
 module.exports = (doc) => (
-`#####  ${doc.data.description.summary}
+`
+#####  ${doc.data.description.summary}
 
 ${doc.data.tags
   .filter(tag => tag.type === 'jsig')

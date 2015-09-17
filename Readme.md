@@ -94,6 +94,7 @@ API
 
 <!-- @doxie.inject start -->
 <!-- Don’t remove or change the comment above – that can break automatic updates. -->
+
 #####  Register the `<parametric-svg>` element with custom settings
 
 ```js
