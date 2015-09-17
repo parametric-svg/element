@@ -11,7 +11,7 @@
     "prepublish": "npm run --silent clean && npm run transpile",
     "readme": "dox --raw < module/register.js | doxie --render --inject",
     "test": "eslint . && npm run test:lite",
-    "test:lite": "browserify --transform=babelify test.js | testron | tap-spec",
+    "test:lite": "./test.sh",
     "test:transpile": "rm -rf .es5 && babel test.js module/*.js --out-dir .es5",
     "transpile": "babel --loose es6.modules module --out-dir .",
     "view-coverage": "echo 'Generating coverage reports...'; npm run coverage >/dev/null && echo '...done.' && opn ./coverage/lcov-report/index.html >/dev/null"
