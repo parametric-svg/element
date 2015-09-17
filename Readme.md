@@ -91,6 +91,7 @@ See the [example](#/example) to get a general idea what a parametric SVG is. You
 
 API
 ---
+<div align="right"><sup>FUNCTION SIGNATURES USE JSIG <a href="http://jsig.biz/">(?)</a></sup></div>
 
 <!-- @doxie.inject start -->
 <!-- Don’t remove or change the comment above – that can break automatic updates. -->
@@ -102,7 +103,6 @@ register(options: {
   document?  : Document
 }) => void
 ```
-<div align="right"><sup>JSIG SIGNATURE <a href="http://jsig.biz/">(?)</a></sup></div>
 
 In most cases you’ll just import the main module and be fine with the
 default settings (see [getting started](#/getting-started)). But if you want
