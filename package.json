@@ -1,6 +1,6 @@
 {
   "name": "parametric-svg-element",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "description": "Parametric 2D graphics. As a custom element (aka Web Component).",
   "dependencies": {
     "babelify": "^6.3.0",
