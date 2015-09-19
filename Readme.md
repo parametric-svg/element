@@ -100,7 +100,7 @@ If it still doesn’t work, have a look at our [note about browser support](#/br
 Usage
 -----
 
-Wrap an `<svg>` with a `<parametric-svg>` element – all parametric attributes within the `<svg>` will be [immediately]() resolved and updated.
+Wrap an `<svg>` with a `<parametric-svg>` element – all parametric attributes within the `<svg>` will be [immediately][] resolved and updated.
 
 See the [example](#/example) to get a general idea what a parametric SVG is. You can read up on the syntax in the [spec][].
 
