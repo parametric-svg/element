@@ -3,46 +3,46 @@ import './module';
 
 import register from './module/register';
 
-const test = require('tape-catch');
+const spec = require('tape-catch');
 const repeat = require('repeat-element');
 
-test('Registers the <parametric-svg> element', (is) => {
-  is.plan(6);
+spec('Registers the <parametric-svg> element', (test) => {
+  test.plan(6);
 
   const HTMLElement = () => {};
 
   const registerElement = (
     name, {prototype, extends: extendsArg = null}
   ) => {
-    is.pass(
+    test.pass(
       'taking a custom implementation of `document`'
     );
 
-    is.equal(
+    test.equal(
       name,
       'parametric-svg',
       'under the name <parametric-svg>'
     );
 
-    is.equal(
+    test.equal(
       extendsArg,
       null,
       'as a standard HTML element – no bells and whistles'
     );
 
-    is.equal(
+    test.equal(
       prototype.constructor,
       HTMLElement,
       'inheriting from the given `HTMLElement`'
     );
 
-    is.equal(
+    test.equal(
       typeof prototype.createdCallback,
       'function',
       'attaching stuff to the createdCallback…'
     );
 
-    is.deepEqual(
+    test.deepEqual(
       [
         prototype.attachedCallback,
         prototype.detachedCallback,
@@ -56,8 +56,8 @@ test('Registers the <parametric-svg> element', (is) => {
   register({document: {registerElement}, HTMLElement});
 });
 
-test('Works in a DOM structure created in one go', (is) => {
-  is.plan(1);
+spec('Works in a DOM structure created in one go', (test) => {
+  test.plan(1);
 
   document.body.innerHTML = `
     <parametric-svg>
@@ -69,18 +69,18 @@ test('Works in a DOM structure created in one go', (is) => {
 
   const rect = document.body.querySelector('rect');
 
-  is.equal(
+  test.equal(
     rect.getAttribute('x'),
     '50',
     'synchronously'
   );
 });
 
-test('Works in a DOM structure built up programatically', (is) => {
-  is.plan(2);
+spec('Works in a DOM structure built up programatically', (test) => {
+  test.plan(2);
 
   setTimeout(() => {
-    // For reliable, consistent results this test must fire after the initial
+    // For reliable, consistent results this spec must fire after the initial
     // render.
 
     const parametricSvg = document.createElement('parametric-svg');
@@ -92,14 +92,14 @@ test('Works in a DOM structure built up programatically', (is) => {
     circle.setAttribute('r', '5');
     circle.setAttribute('parametric:r', '2 * (3 + 5)');
 
-    is.equal(
+    test.equal(
       circle.getAttribute('r'),
       '5',
       'updates asynchronously'
     );
 
     requestAnimationFrame(() => {
-      is.equal(
+      test.equal(
         circle.getAttribute('r'),
         String(2 * (3 + 5)),
         'within a single animation frame'
@@ -108,8 +108,8 @@ test('Works in a DOM structure built up programatically', (is) => {
   });
 });
 
-test('Only affects the first child SVG', (is) => {
-  is.plan(2);
+spec('Only affects the first child SVG', (test) => {
+  test.plan(2);
 
   document.body.innerHTML = `
     <parametric-svg>
@@ -128,7 +128,7 @@ test('Only affects the first child SVG', (is) => {
 
   const rect = document.body.querySelector('rect');
 
-  is.equal(
+  test.equal(
     rect.getAttribute('x'),
     null,
     'leaves a second child untouched'
@@ -136,15 +136,15 @@ test('Only affects the first child SVG', (is) => {
 
   const circle = document.body.querySelector('circle');
 
-  is.equal(
+  test.equal(
     circle.getAttribute('r'),
     '5',
     'leaves another nested child untouched'
   );
 });
 
-test('Works with a nested SVG', (is) => {
-  is.plan(1);
+spec('Works with a nested SVG', (test) => {
+  test.plan(1);
 
   document.body.innerHTML = `
     <parametric-svg>
@@ -158,15 +158,15 @@ test('Works with a nested SVG', (is) => {
 
   const rect = document.body.querySelector('rect');
 
-  is.equal(
+  test.equal(
     rect.getAttribute('x'),
     String(5 / 5),
     'nested one level deep'
   );
 });
 
-test('Warns when no <svg> is inside', (is) => {
-  is.plan(1);
+spec('Warns when no <svg> is inside', (test) => {
+  test.plan(1);
 
   const HTMLElement = {prototype: {
     querySelector: (selector) => (selector === 'svg' ? null : {}),
@@ -177,7 +177,7 @@ test('Warns when no <svg> is inside', (is) => {
   };
 
   const logger = {warn(message) {
-    is.ok(
+    test.ok(
       /couldn’t find/i.test(message),
       'prints a helpful warning'
     );
