@@ -271,7 +271,7 @@ spec('Updates variables dynamically', (test) => {
   );
 
   parametricSvg.removeAttribute('a');
-  parametricSvg.removeAttribute('b', '8');
+  parametricSvg.setAttribute('b', '8');
   test.equal(
     rect.getAttribute('x'),
     '15',
