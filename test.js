@@ -241,3 +241,46 @@ spec('Only updates a parameter when all variables are defined', (test) => {
     'updates another attribute with satisfied dependencies`'
   );
 });
+
+spec('Updates variables dynamically', (test) => {
+  test.plan(4);
+
+  document.body.innerHTML = `
+    <parametric-svg>
+      <svg>
+        <rect parametric:x="a" parametric:y="b" />
+      </svg>
+    </parametric-svg>
+  `;
+
+  const rect = document.body.querySelector('rect');
+  const parametricSvg = document.body.querySelector('parametric-svg');
+
+  parametricSvg.setAttribute('a', '5');
+  test.equal(
+    rect.getAttribute('x'),
+    '5',
+    'updates parametric attributes synchronously'
+  );
+
+  parametricSvg.setAttribute('a', '15');
+  test.equal(
+    rect.getAttribute('x'),
+    '15',
+    'does it repeatedly'
+  );
+
+  parametricSvg.removeAttribute('a');
+  parametricSvg.removeAttribute('b', '8');
+  test.equal(
+    rect.getAttribute('x'),
+    '15',
+    'leaves an attribute as it when a dependency is removed'
+  );
+
+  test.equal(
+    rect.getAttribute('y'),
+    '8',
+    'but updates other attributes even so'
+  );
+});
