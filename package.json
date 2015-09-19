@@ -5,8 +5,8 @@
   "dependencies": {
     "babelify": "^6.3.0",
     "object-assign": "^4.0.1",
-    "parametric-svg-parse": "^1.0.0-alpha",
-    "parametric-svg-patch": "^1.0.0-alpha",
+    "parametric-svg-parse": "^1.0.0-alpha.1",
+    "parametric-svg-patch": "^1.0.0-alpha.1",
     "set-immediate-shim": "^1.0.1"
   },
   "scripts": {
