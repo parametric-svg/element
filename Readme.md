@@ -32,22 +32,33 @@
 <a                                                 id="/example"></a>&nbsp;
 
 ```html
-<parametric-svg>
-  <svg><rect
-    parametric:x="2 * (5 + 3)"
-  /></svg>
-</parametric-svg>
+<svg>
+  <rect
+    parametric:x="2 * (a + 3)"
+  />
+</svg>
 ```
 
 <p align="center"><b>➔</b></p>
 
 ```html
-<parametric-svg>
-  <svg><rect
-    parametric:x="2 * (5 + 3)"
+<parametric-svg a="5"><svg>
+  <rect
+    parametric:x="2 * (a + 3)"
                x="16"
-  /></svg>
-</parametric-svg>
+  />
+</svg></parametric-svg>
+```
+
+<p align="center"><b>➔</b></p>
+
+```html
+<parametric-svg a="50"><svg>
+  <rect
+    parametric:x="2 * (a + 3)"
+               x="106"
+  />
+</svg></parametric-svg>
 ```
 
 
