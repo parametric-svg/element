@@ -34,9 +34,7 @@
 
 ```html
 <svg>
-  <rect
-    parametric:x="2 * (a + 3)"
-  />
+  <rect parametric:width="2 * (a + 3)"/>
 </svg>
 ```
 
@@ -44,10 +42,8 @@
 
 ```html
 <parametric-svg a="5"><svg>
-  <rect
-    parametric:x="2 * (a + 3)"
-               x="16"
-  />
+  <rect parametric:width="2 * (a + 3)"
+                   width="16" />
 </svg></parametric-svg>
 ```
 
@@ -55,10 +51,8 @@
 
 ```html
 <parametric-svg a="50"><svg>
-  <rect
-    parametric:x="2 * (a + 3)"
-               x="106"
-  />
+  <rect parametric:width="2 * (a + 3)"
+                   width="106" />
 </svg></parametric-svg>
 ```
 
