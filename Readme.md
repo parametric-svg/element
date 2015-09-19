@@ -87,9 +87,10 @@ Otherwise you can drop our `<script>` from the fantastic *[wzrd.in][]* CDN anywh
 
 If you’re going the `<script>` way, remember to swap `latest` with a concrete version number in production. You can also download the script from https://wzrd.in/standalone/parametric-svg-element@latest and serve it yourself.
 
+If it still doesn’t work, have a look at our [note about browser support](#/browser-support).
+
 [webpack]:  http://webpack.github.io
 [wzrd.in]:  http://wzrd.in
-
 
 
 
@@ -106,6 +107,19 @@ See the [example](#/example) to get a general idea what a parametric SVG is. You
 [immediately]:  http://devdocs.io/dom/window/setimmediate
 [spec]:         https://github.com/parametric-svg/spec#/
 
+
+
+
+<a                                              id="/browser-support"></a>&nbsp;
+
+Browser support
+---------------
+
+Any browser which supports [ES5 and][] [custom elements][] will do. You can make custom elements work in any browser using the great *[document-register-element][]* polyfill.
+
+[ES5 and]:                    http://caniuse.com/#feat=es5
+[custom elements]:            http://caniuse.com/#feat=custom-elements
+[document-register-element]:  https://github.com/WebReflection/document-register-element
 
 
 
