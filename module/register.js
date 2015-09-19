@@ -3,6 +3,8 @@ const patch = require('parametric-svg-patch');
 const setImmediate = require('set-immediate-shim');
 const assign = require('object-assign');
 const {create} = Object;
+const asObject = require('as/object');
+const arrayFrom = require('array-from');
 
  /**
   * Register the `<parametric-svg>` element with custom settings
@@ -59,7 +61,11 @@ export default ({logger, document, HTMLElement}) => {
     },
 
     _init(svg) {
-      patch(svg, parse(svg), {});
+      const variables = asObject(arrayFrom(this.attributes).map(
+        ({name, value}) => ({key: name, value})
+      ));
+
+      patch(svg, parse(svg), variables);
     },
   });
 

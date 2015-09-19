@@ -3,6 +3,8 @@
   "version": "1.0.0-alpha.2",
   "description": "Parametric 2D graphics. As a custom element (aka Web Component).",
   "dependencies": {
+    "array-from": "^2.0.2",
+    "as": "^0.4.1",
     "babelify": "^6.3.0",
     "object-assign": "^4.0.1",
     "parametric-svg-parse": "^1.0.0-alpha.1",
