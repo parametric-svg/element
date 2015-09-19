@@ -68,7 +68,6 @@ spec('Works in a DOM structure created in one go', (test) => {
   `;
 
   const rect = document.body.querySelector('rect');
-
   test.equal(
     rect.getAttribute('x'),
     '50',
@@ -135,7 +134,6 @@ spec('Only affects the first child SVG', (test) => {
   );
 
   const circle = document.body.querySelector('circle');
-
   test.equal(
     circle.getAttribute('r'),
     '5',
@@ -157,7 +155,6 @@ spec('Works with a nested SVG', (test) => {
   `;
 
   const rect = document.body.querySelector('rect');
-
   test.equal(
     rect.getAttribute('x'),
     String(5 / 5),
