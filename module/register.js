@@ -60,12 +60,20 @@ export default ({logger, document, HTMLElement}) => {
       });
     },
 
+    attributeChangedCallback() { this._update(); },
+
     _init(svg) {
+      this._svg = svg;
+      this._ast = parse(this._svg);
+      this._update();
+    },
+
+    _update() {
       const variables = asObject(arrayFrom(this.attributes).map(
         ({name, value}) => ({key: name, value})
       ));
 
-      patch(svg, parse(svg), variables);
+      patch(this._svg, this._ast, variables);
     },
   });
 
