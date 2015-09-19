@@ -84,7 +84,7 @@ Otherwise you can drop our `<script>` from the fantastic *[wzrd.in][]* CDN anywh
 
 If you’re going the `<script>` way, remember to swap `latest` with a concrete version number in production. You can also download the script from https://wzrd.in/standalone/parametric-svg-element@latest and serve it yourself.
 
-If it still doesn’t work, have a look at our [note about browser support](#/browser-support).
+If it still doesn’t work, have a look at our [note about browser support](#/browser-support). If you need to change the settings, have a look at our [API](#/api).
 
 [webpack]:  http://webpack.github.io
 [wzrd.in]:  http://wzrd.in
