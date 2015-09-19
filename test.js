@@ -238,7 +238,7 @@ spec('Only updates a parameter when all variables are defined', (test) => {
   test.equal(
     rect.getAttribute('x'),
     '2',
-    'updates another attribute with satisfied dependencies`'
+    'updates another attribute with satisfied dependencies'
   );
 });
 
