@@ -56,7 +56,7 @@
 </svg></parametric-svg>
 ```
 
-<p align="center"><a href="http://jsbin.com/legito/edit?html,output"><img alt="SEE THE LIVE EXAMPLE ➔" height="32" src="https://img.shields.io/badge/SEE%20THE%20LIVE%20EXAMPLE-%E2%9E%94-555555.svg?style=flat-square" /></a></p>
+<p align="center"><a href="http://jsbin.com/legito/edit?html,output"><img alt="❤ SEE THE LIVE EXAMPLE!" height="32" src="https://img.shields.io/badge/%E2%9D%A4-SEE%20THE%20LIVE%20EXAMPLE!-555555.svg?style=flat-square" /></a></p>
 
 
 
