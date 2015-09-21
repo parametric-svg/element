@@ -1,5 +1,3 @@
-<a                                                             id="/"></a>&nbsp;
-
 [![Travis CI
 ](https://img.shields.io/travis/parametric-svg/element/master.svg?style=flat-square)
 ](https://travis-ci.org/parametric-svg/element)
@@ -16,7 +14,7 @@
 
 
 
-<h1 align="center">
+<h1 align="center" id="/">
   <img
     alt="&gt;parametric-svg&lt;"
     src="https://cdn.rawgit.com/parametric-svg/identity/v1.1.0/logo/html.svg"
